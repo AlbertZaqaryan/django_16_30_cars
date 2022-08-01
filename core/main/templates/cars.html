@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <a href="{% url 'home' %}"><button>Home</button></a>
+    <a href="{% url 'cars' %}"><button>Cars</button></a>
+    <a href="{% url 'about' %}"><button>AboutUs</button></a>
+</head>
+<body>
+    {% for i in cars %}
+        <h2>{{ i.name }}</h2>
+        <img src="{{ i.img.url }}" width="300px" alt="">
+        <p>{{ i.about }}</p>
+        <h5>{{ i.price }}</h5>
+        <hr>
+    {% endfor %}
+</body>
+</html>
